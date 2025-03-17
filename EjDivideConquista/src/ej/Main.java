@@ -16,17 +16,22 @@ public class Main {
 			array[count] = c;
 			count ++;
 					}
+
 		
-		boolean verOrden = ordenRecursivo(array, 0);
-		System.out.println(verOrden);
+		boolean verOrden = ordenDivideConquista(array, 0, array.length- 1);
 		
+		System.out.print(verOrden);
 		//Primera solución
 		/* 
 		boolean verOrden = orden(array);
 		System.out.println(verOrden);
 		*/
 		
-		
+		//SEGUNDA SOLUCIÓN
+		/*
+		boolean verOrden = ordenRecursivo(array, 0);
+		System.out.println(verOrden);
+		*/
 	}
 	//Primera solución
 	/*
@@ -39,6 +44,9 @@ public class Main {
 		return true;
 	}
 	*/
+	
+	//SEGUNDA SOLUCIÓN
+	/*
 	public static boolean ordenRecursivo(char[] array, int index) {
 		if(index == array.length-1) {
 			return true;
@@ -51,8 +59,24 @@ public class Main {
 			return ordenRecursivo(array, index +1);
 		}
 	}
-
+	*/
+	
+	//Para hacerlo recursivo podría dividir el array a la mitad, verificar el lado izquierda, verificar el derecho y verificar el medio?
+	public static boolean ordenDivideConquista(char[] array, int inicio, int fin) {
+		if (inicio >= fin) {
+			return true;
+		}
+		
+		int mitad = (inicio+fin)/2;
+		
+		boolean izquierda = ordenDivideConquista(array, inicio, mitad); 
+		boolean derecha = ordenDivideConquista(array, mitad+1, fin);
+		
+		return izquierda && derecha && array[mitad] <= array[mitad + 1];
+	}
+	
+	
 }
 
 
-//Para hacerlo recursivo podría dividir el array a la mitad, verificar el lado izquierda, verificar el derecho y verificar el medio?
+
