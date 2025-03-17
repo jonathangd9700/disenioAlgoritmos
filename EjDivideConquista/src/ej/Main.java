@@ -1,0 +1,58 @@
+package ej;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String cantidadChar = System.console().readLine("Ingrese la cantidad de caracteres");
+		int number = Integer.valueOf(cantidadChar);
+		char[] array = new char[number];
+		
+
+		char c = ' ';
+		int count = 0;
+		while(c != '0' && count <array.length) {
+			c = System.console().readLine("Ingrese un caracter. 0 para finalizar").charAt(0);
+			array[count] = c;
+			count ++;
+					}
+		
+		boolean verOrden = ordenRecursivo(array, 0);
+		System.out.println(verOrden);
+		
+		//Primera solución
+		/* 
+		boolean verOrden = orden(array);
+		System.out.println(verOrden);
+		*/
+		
+		
+	}
+	//Primera solución
+	/*
+	public static boolean orden(char[] array) {
+		for(int i = 0; i < array.length -1; i ++) {
+				if(array[i] > array[i+1]) {
+					return false;
+				}
+		}
+		return true;
+	}
+	*/
+	public static boolean ordenRecursivo(char[] array, int index) {
+		if(index == array.length-1) {
+			return true;
+		}
+		if(array[index] > array[index+1] ) {
+			return false;
+		}
+		
+		else {
+			return ordenRecursivo(array, index +1);
+		}
+	}
+
+}
+
+
+//Para hacerlo recursivo podría dividir el array a la mitad, verificar el lado izquierda, verificar el derecho y verificar el medio?
