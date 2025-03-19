@@ -49,8 +49,11 @@ public class Main {
 		boolean verificarPotencia = potencias.esPotencia(4);
 		
 		if(verificarPotencia) {
-			int resultado = potencias.calcPotencia(4, 2);
+			int resultado = potencias.calcPotencia(4, 3);
 			System.out.println("Resultado: " + resultado);
+			
+			int resultado2 = potencias.calcPotenciaDyV(4, 3);
+			System.out.println("Resultado: " + resultado2);
 		}
 		
 		

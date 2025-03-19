@@ -23,6 +23,7 @@ public class ej2Potencia {
 		}	
 	}
 	
+	//Complejidad lineal
 	public static int calcPotencia(int a, int potencia) {
 			if(potencia == 1) {
 				return a;
@@ -30,4 +31,20 @@ public class ej2Potencia {
 			return a * calcPotencia(a, potencia-1);
 	}
 	
+	
+	//Divide y venceras
+	public static int calcPotenciaDyV(int a, int potencia) {
+	    if (potencia == 0) {
+	    	return 1; 
+	    }
+
+	    int mitad = calcPotenciaDyV(a, potencia / 2); 
+	    if(potencia %2 == 0) {
+		    return mitad * mitad;
+	    }
+	    else {
+	    	return mitad * mitad * a;
+	    }
+
+	}
 }
