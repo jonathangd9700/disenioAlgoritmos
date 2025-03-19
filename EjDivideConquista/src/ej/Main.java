@@ -4,6 +4,10 @@ public class Main {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		
+		//Ejercicio 1
+		
+		/*
 		String cantidadChar = System.console().readLine("Ingrese la cantidad de caracteres");
 		int number = Integer.valueOf(cantidadChar);
 		char[] array = new char[number];
@@ -21,6 +25,9 @@ public class Main {
 		boolean verOrden = ordenDivideConquista(array, 0, array.length- 1);
 		
 		System.out.print(verOrden);
+		
+		*/
+		
 		//Primera solución
 		/* 
 		boolean verOrden = orden(array);
@@ -32,6 +39,21 @@ public class Main {
 		boolean verOrden = ordenRecursivo(array, 0);
 		System.out.println(verOrden);
 		*/
+		
+		
+		
+		//Ejercicio 2
+		
+		ej2Potencia potencias = new ej2Potencia();
+		
+		boolean verificarPotencia = potencias.esPotencia(4);
+		
+		if(verificarPotencia) {
+			int resultado = potencias.calcPotencia(4, 2);
+			System.out.println("Resultado: " + resultado);
+		}
+		
+		
 	}
 	//Primera solución
 	/*
@@ -61,7 +83,10 @@ public class Main {
 	}
 	*/
 	
+	//Ejercicio 1
+	
 	//Para hacerlo recursivo podría dividir el array a la mitad, verificar el lado izquierda, verificar el derecho y verificar el medio?
+	/*
 	public static boolean ordenDivideConquista(char[] array, int inicio, int fin) {
 		if (inicio >= fin) {
 			return true;
@@ -74,6 +99,9 @@ public class Main {
 		
 		return izquierda && derecha && array[mitad] <= array[mitad + 1];
 	}
+	*/
+
+	
 	
 	
 }
