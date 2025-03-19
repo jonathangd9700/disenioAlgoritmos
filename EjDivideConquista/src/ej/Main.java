@@ -52,7 +52,7 @@ public class Main {
 			int resultado = potencias.calcPotencia(4, 3);
 			System.out.println("Resultado: " + resultado);
 			
-			int resultado2 = potencias.calcPotenciaDyV(4, 3);
+			int resultado2 = potencias.calcPotenciaDyC(4, 3);
 			System.out.println("Resultado: " + resultado2);
 		}
 		

@@ -32,13 +32,13 @@ public class ej2Potencia {
 	}
 	
 	
-	//Divide y venceras
-	public static int calcPotenciaDyV(int a, int potencia) {
+	//Divide y conquista
+	public static int calcPotenciaDyC(int a, int potencia) {
 	    if (potencia == 0) {
 	    	return 1; 
 	    }
 
-	    int mitad = calcPotenciaDyV(a, potencia / 2); 
+	    int mitad = calcPotenciaDyC(a, potencia / 2); 
 	    if(potencia %2 == 0) {
 		    return mitad * mitad;
 	    }
